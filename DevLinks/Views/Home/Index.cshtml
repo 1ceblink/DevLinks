@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Links</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            color: #333333;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        a {
+            display: block;
+            margin: 15px 0;
+            font-size: 20px;
+            color: #1a73e8;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-weight: 600;
+        }
+
+            a:hover {
+                color: #0056b3;
+                transform: scale(1.05);
+            }
+
+        .container p {
+            color: #666666;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Armen Zoroghlyan</h1>
+        @{
+            foreach(KeyValuePair<string, string> link in Model) {
+                <a href="@link.Value" target="_blank">@link.Key</a>
+            
+        } }
+        <p>Connect with me through these platforms!</p>
+    </div>
+
+</body>
+</html>
